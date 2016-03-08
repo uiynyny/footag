@@ -36,4 +36,8 @@ public class ImageCollectionModel extends Observable {
         notifyObservers();
     }
 
+    public void updateView(){
+        setChanged();
+        notifyObservers();
+    }
 }

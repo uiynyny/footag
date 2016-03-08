@@ -5,11 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Observable;
 
-/**
- * Created by temp user on 06/03/16.
- */
+
 public class ImageModel extends Observable implements Serializable{
-    private Image image;
+    private DTPicture image;
     private String name;
     private int rate;
     private String path;

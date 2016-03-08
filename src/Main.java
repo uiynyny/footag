@@ -20,6 +20,7 @@ public class Main {
         frame.setLayout(new BorderLayout());
         frame.add(toolView,BorderLayout.NORTH);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setMinimumSize(new Dimension(400,300));
         frame.pack();
         frame.setVisible(true);
     }

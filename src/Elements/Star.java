@@ -1,5 +1,6 @@
 package Elements;
 
+import java.awt.*;
 import java.awt.geom.Path2D;
 
 /**
@@ -19,5 +20,6 @@ public class Star extends Path2D.Double {
         this.lineTo(pos_x+7, pos_y+5);
         this.lineTo(pos_x+1.5, pos_y+5);
         this.lineTo(pos_x, pos_y);
+        closePath();
     }
 }

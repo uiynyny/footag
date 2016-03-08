@@ -6,33 +6,42 @@ import model.ImageCollectionModel;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
-
-/**
- * Created by temp user on 06/03/16.
- */
-public class ToolView extends JPanel  {
-    private JButton open = new JButton(new ImageIcon("icon/upload.png"));
-    private JButton grid = new JButton(new ImageIcon("icon/grid.png"));
-    private JButton list = new JButton(new ImageIcon("icon/list.png"));
-    private FilterPane filter = new FilterPane();
+public class ToolView extends JPanel implements Observer {
+    Image upload = new ImageIcon("icon/upload.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
+    Image g = new ImageIcon("icon/grid.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
+    Image l = new ImageIcon("icon/list.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
+    private JButton open = new JButton(new ImageIcon(upload));
+    private JButton grid = new JButton(new ImageIcon(g));
+    private JButton list = new JButton(new ImageIcon(l));
     private ImageCollectionModel icm;
-    private Shape[] star;
+    private ArrayList<Shape> stars=new ArrayList<>();
+    private JLabel label = new JLabel("Filtered by:");
+    private int preRate =0;
 
     public ToolView(ImageCollectionModel icm){
         super();
         this.icm=icm;
         layoutView();
         controller();
+        icm.addObserver(this);
+        icm.updateView();
     }
+
+    private FilterPane filter = new FilterPane();
 
     private void layoutView(){
         setLayout(new BoxLayout(this,BoxLayout.LINE_AXIS));
@@ -43,26 +52,77 @@ public class ToolView extends JPanel  {
         add(Box.createHorizontalStrut(10));
         add(list);
         add(Box.createHorizontalGlue());
+        add(label);
+        add(Box.createHorizontalStrut(5));
         add(filter);
 
     }
 
+    @Override
+    public void update(Observable o, Object arg) {
+        filter.repaint();
+    }
+
     private class FilterPane extends JPanel{
+
         public FilterPane(){
-            for(int i=0;i<5;i++){
-                star[i]=new Star(14*i/2,3);
+            for(int i=1;i<=5;i++){
+                stars.add(new Star(14*i,0));
             }
+            registerController();
             setBackground(Color.red);
-            setPreferredSize(new Dimension(70,20));
+            setPreferredSize(new Dimension(80,15));
+            setMaximumSize(new Dimension(80,15));
+
         }
 
+        private void registerController(){
+            addMouseMotionListener(new MouseMotionAdapter() {
+                @Override
+                public void mouseMoved(MouseEvent e) {
+                    System.err.println("moved");
+                    if(e.getX()<7){
+                        preRate=0;
+                    }
+                    else if(e.getX()>=7 && e.getX()<=21){
+                        preRate = 1;
+                    }else if(e.getX()>21 && e.getX()<=35){
+                        preRate = 2;
+                    }else if(e.getX()>35 && e.getX()<=49){
+                        preRate = 3;
+                    }else if(e.getX()>49 && e.getX()<=63){
+                        preRate = 4;
+                    }else if(e.getX()>63 && e.getX()<=77){
+                        preRate = 5;
+                    }
+                    repaint();
+                }
+            });
+            addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    icm.setRateFilter(preRate);
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    preRate= icm.getRateFilter();
+                    repaint();
+                }
+            });
+        }
         @Override
-        public void paintComponents(Graphics g) {
-            super.paintComponents(g);
+        public void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D)g;
+            g2d.setColor(Color.WHITE);
+            g2d.fillRect(0,0,getWidth(),getHeight());
             g2d.setColor(Color.BLACK);
             for(int i=0;i<5;i++){
-                g2d.draw(star[i]);
+                g2d.draw(stars.get(i));
+            }
+            for(int i=0;i<preRate;i++){
+                g2d.setColor(Color.BLACK);
+                g2d.fill(stars.get(i));
             }
         }
     }
@@ -74,14 +134,23 @@ public class ToolView extends JPanel  {
                 fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 fc.addChoosableFileFilter(new FileNameExtensionFilter("Picture","jpg","jpeg","gif","png","bmp","tif","tiff"));
                 fc.setAcceptAllFileFilterUsed(false);
-                fc.setCurrentDirectory(new File("user/Desktop"));
+                fc.setMultiSelectionEnabled(true);
                 int ret = fc.showOpenDialog(fc);
                 if(ret== JFileChooser.APPROVE_OPTION){
-                    File file = fc.getSelectedFile();
-                    String name = file.getName();
-                    String path = file.getAbsolutePath();
-                    BasicFileAttributes atr = Files.readAttributes(Paths.get(path),BasicFileAttributes.class);
-                    FileTime time= atr.creationTime();
+                    File[] file = fc.getSelectedFiles();
+                    for(int i=0;i<file.length;i++) {
+                        String name = file[i].getName();
+                        String path = file[i].getAbsolutePath();
+                        BasicFileAttributes atr = Files.readAttributes(Paths.get(path), BasicFileAttributes.class);
+                        FileTime time = atr.creationTime();
+                        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+                        String date = sdf.format(time.toMillis());
+
+                        System.err.println(name);
+                        System.err.println(date);
+
+
+                    }
                 }
             }catch(IOException ie){
                 ie.printStackTrace();
