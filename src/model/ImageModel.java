@@ -7,7 +7,7 @@ import java.util.Observable;
 
 
 public class ImageModel extends Observable implements Serializable{
-    private DTPicture image;
+    private Image image;
     private String name;
     private int rate;
     private String path;

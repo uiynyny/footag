@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="57074431-542b-4469-9f00-958b88d2d4af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elements/Star.java" afterPath="$PROJECT_DIR$/src/Elements/Star.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" afterPath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageModel.java" afterPath="$PROJECT_DIR$/src/model/ImageModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ToolView.java" afterPath="$PROJECT_DIR$/src/view/ToolView.java" />
     </list>
     <ignored path="footag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,9 +57,11 @@
       <file leaf-file-name="ImageModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/ImageModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15261044">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.3433735">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -686,12 +684,19 @@
       <option name="number" value="Default" />
       <updated>1457324774795</updated>
       <workItem from="1457324778346" duration="7379000" />
-      <workItem from="1457392814245" duration="11271000" />
+      <workItem from="1457392814245" duration="11381000" />
     </task>
+    <task id="LOCAL-00001" summary="toolview finish">
+      <created>1457424382408</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1457424382408</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18650000" />
+    <option name="totallyTimeSpent" value="18760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1037" y="92" width="1019" height="759" extended-state="0" />
@@ -724,6 +729,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="toolview finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="toolview finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -764,7 +773,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -822,9 +833,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ImageModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15261044">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.3433735">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
