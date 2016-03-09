@@ -1,5 +1,6 @@
 package model;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +12,7 @@ public class ImageModel extends Observable implements Serializable{
     private String name;
     private int rate;
     private String path;
-    private Date date;
+    private String date;
 
     public int getRate(){
         return rate;
@@ -22,7 +23,11 @@ public class ImageModel extends Observable implements Serializable{
         notifyObservers();
     }
 
-    public Date getDate() {
+    public String getName() {
+        return name;
+    }
+
+    public String getDate() {
         return date;
     }
 
@@ -30,9 +35,9 @@ public class ImageModel extends Observable implements Serializable{
         return path;
     }
 
-    public ImageModel(String name,Image img, String filepath, Date date) {
+    public ImageModel(String name, String filepath, String date) {
         this.name=name;
-        this.image=img;
+        this.image= new ImageIcon(path).getImage();
         this.path = filepath;
         this.date = date;
         this.rate = 0;

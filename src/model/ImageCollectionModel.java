@@ -3,9 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Observable;
 
-/**
- * Created by temp user on 06/03/16.
- */
 public class ImageCollectionModel extends Observable {
     public ArrayList<ImageModel> listModel;
     private int rateFilter;
@@ -26,6 +23,7 @@ public class ImageCollectionModel extends Observable {
 
     public void addModel(ImageModel im){
         listModel.add(im);
+        im.updateView();
         setChanged();
         notifyObservers();
     }

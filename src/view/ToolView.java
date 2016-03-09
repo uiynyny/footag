@@ -2,6 +2,7 @@ package view;
 
 import Elements.*;
 import model.ImageCollectionModel;
+import model.ImageModel;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -30,7 +31,7 @@ public class ToolView extends JPanel implements Observer {
     private JButton clear = new JButton("Clear");
     private ImageCollectionModel icm;
     private ArrayList<Shape> stars=new ArrayList<>();
-    private JLabel label = new JLabel("Filtered by:");
+    private JLabel label = new JLabel("Filter by:");
     private int preRate =0;
 
     public ToolView(ImageCollectionModel icm){
@@ -53,16 +54,15 @@ public class ToolView extends JPanel implements Observer {
         add(Box.createHorizontalStrut(10));
         add(list);
         add(Box.createHorizontalGlue());
-        add(clear);
         add(label);
         add(Box.createHorizontalStrut(5));
         add(filter);
-
+        add(clear);
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        filter.repaint();
+        repaint();
     }
 
     private class FilterPane extends JPanel{
@@ -75,7 +75,6 @@ public class ToolView extends JPanel implements Observer {
             setBackground(Color.red);
             setPreferredSize(new Dimension(80,15));
             setMaximumSize(new Dimension(80,15));
-
         }
 
         private void registerController(){
@@ -94,7 +93,7 @@ public class ToolView extends JPanel implements Observer {
                     }else if(e.getX()>63 && e.getX()<=77){
                         preRate = 5;
                     }
-                    repaint();
+                    icm.updateView();
                 }
             });
             addMouseListener(new MouseAdapter() {
@@ -106,15 +105,15 @@ public class ToolView extends JPanel implements Observer {
                 @Override
                 public void mouseExited(MouseEvent e) {
                     preRate= icm.getRateFilter();
-                    repaint();
+                    icm.updateView();
                 }
             });
         }
         @Override
         public void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D)g;
-            g2d.setColor(Color.WHITE);
-            g2d.fillRect(0,0,getWidth(),getHeight());
+//            g2d.setColor(Color.WHITE);
+//            g2d.fillRect(0,0,getWidth(),getHeight());
             g2d.setColor(Color.BLACK);
             for(int i=0;i<5;i++){
                 g2d.draw(stars.get(i));
@@ -128,6 +127,7 @@ public class ToolView extends JPanel implements Observer {
 
     private void controller(){
         clear.addActionListener(e->{
+            preRate=0;
             icm.setRateFilter(0);
         });
         open.addActionListener(e->{
@@ -140,18 +140,19 @@ public class ToolView extends JPanel implements Observer {
                 int ret = fc.showOpenDialog(fc);
                 if(ret== JFileChooser.APPROVE_OPTION){
                     File[] file = fc.getSelectedFiles();
-                    for(int i=0;i<file.length;i++) {
-                        String name = file[i].getName();
-                        String path = file[i].getAbsolutePath();
-                        BasicFileAttributes atr = Files.readAttributes(Paths.get(path), BasicFileAttributes.class);
-                        FileTime time = atr.creationTime();
+                    for (File aFile : file) {
+                        String name = aFile.getName();
+                        String path = aFile.getAbsolutePath();
+                        //BasicFileAttributes atr = Files.readAttributes(Paths.get(path), BasicFileAttributes.class);
+                        FileTime time = Files.readAttributes(Paths.get(path), BasicFileAttributes.class).creationTime();
                         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                         String date = sdf.format(time.toMillis());
 
                         System.err.println(name);
                         System.err.println(date);
-
-
+                        System.err.println(path);
+                        ImageModel im = new ImageModel(name, path, date);
+                        icm.addModel(im);
                     }
                 }
             }catch(IOException ie){
