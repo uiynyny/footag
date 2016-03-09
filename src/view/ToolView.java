@@ -27,6 +27,7 @@ public class ToolView extends JPanel implements Observer {
     private JButton open = new JButton(new ImageIcon(upload));
     private JButton grid = new JButton(new ImageIcon(g));
     private JButton list = new JButton(new ImageIcon(l));
+    private JButton clear = new JButton("Clear");
     private ImageCollectionModel icm;
     private ArrayList<Shape> stars=new ArrayList<>();
     private JLabel label = new JLabel("Filtered by:");
@@ -52,6 +53,7 @@ public class ToolView extends JPanel implements Observer {
         add(Box.createHorizontalStrut(10));
         add(list);
         add(Box.createHorizontalGlue());
+        add(clear);
         add(label);
         add(Box.createHorizontalStrut(5));
         add(filter);
@@ -81,10 +83,7 @@ public class ToolView extends JPanel implements Observer {
                 @Override
                 public void mouseMoved(MouseEvent e) {
                     System.err.println("moved");
-                    if(e.getX()<7){
-                        preRate=0;
-                    }
-                    else if(e.getX()>=7 && e.getX()<=21){
+                    if(e.getX()>=7 && e.getX()<=21){
                         preRate = 1;
                     }else if(e.getX()>21 && e.getX()<=35){
                         preRate = 2;
@@ -128,6 +127,9 @@ public class ToolView extends JPanel implements Observer {
     }
 
     private void controller(){
+        clear.addActionListener(e->{
+            icm.setRateFilter(0);
+        });
         open.addActionListener(e->{
             try{
                 JFileChooser fc= new JFileChooser();
