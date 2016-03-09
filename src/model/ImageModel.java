@@ -8,7 +8,7 @@ import java.util.Observable;
 
 
 public class ImageModel extends Observable implements Serializable{
-    private Image image;
+    //private Image image;
     private String name;
     private int rate;
     private String path;
@@ -37,7 +37,7 @@ public class ImageModel extends Observable implements Serializable{
 
     public ImageModel(String name, String filepath, String date) {
         this.name=name;
-        this.image= new ImageIcon(path).getImage();
+        //this.image= new ImageIcon(path).getImage();
         this.path = filepath;
         this.date = date;
         this.rate = 0;

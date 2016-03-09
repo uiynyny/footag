@@ -17,7 +17,7 @@ public class FooTag {
         ImageCollectionModel icm= new ImageCollectionModel();
 
         ToolView toolView = new ToolView(icm);
-        PicturePanel picturePanel = new PicturePanel();
+        PicturePanel picturePanel = new PicturePanel(icm);
         JScrollPane jScrollPane = new JScrollPane(picturePanel);
         jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);

@@ -22,9 +22,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class ToolView extends JPanel implements Observer {
-    Image upload = new ImageIcon("icon/upload.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
-    Image g = new ImageIcon("icon/grid.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
-    Image l = new ImageIcon("icon/list.png").getImage().getScaledInstance(40,40,Image.SCALE_SMOOTH);
+    Image upload = new ImageIcon("icon/upload.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
+    Image g = new ImageIcon("icon/grid.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
+    Image l = new ImageIcon("icon/list.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
     private JButton open = new JButton(new ImageIcon(upload));
     private JButton grid = new JButton(new ImageIcon(g));
     private JButton list = new JButton(new ImageIcon(l));
@@ -32,7 +32,7 @@ public class ToolView extends JPanel implements Observer {
     private ImageCollectionModel icm;
     private ArrayList<Shape> stars=new ArrayList<>();
     private JLabel label = new JLabel("Filter by:");
-    private int preRate =0;
+    private int preRate = 0;
 
     public ToolView(ImageCollectionModel icm){
         super();
