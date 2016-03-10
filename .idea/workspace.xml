@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="57074431-542b-4469-9f00-958b88d2d4af" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elements/DTPicture.java" afterPath="$PROJECT_DIR$/src/Elements/DTPicture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FooTag.java" afterPath="$PROJECT_DIR$/src/FooTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" afterPath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageModel.java" afterPath="$PROJECT_DIR$/src/model/ImageModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/PicturePanel.java" afterPath="$PROJECT_DIR$/src/view/PicturePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ToolView.java" afterPath="$PROJECT_DIR$/src/view/ToolView.java" />
     </list>
     <ignored path="footag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -739,7 +733,7 @@
       <workItem from="1457491217414" duration="9613000" />
       <workItem from="1457541465636" duration="1606000" />
       <workItem from="1457544903742" duration="1226000" />
-      <workItem from="1457564318462" duration="12730000" />
+      <workItem from="1457564318462" duration="12744000" />
     </task>
     <task id="LOCAL-00001" summary="toolview finish">
       <created>1457424382408</created>
@@ -789,11 +783,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457546115836</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="start on DTPicture">
+      <created>1457578661736</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1457578661736</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44582000" />
+    <option name="totallyTimeSpent" value="44596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
