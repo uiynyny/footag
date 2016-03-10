@@ -1,7 +1,9 @@
 package view;
 
 
+import Elements.DTPicture;
 import model.ImageCollectionModel;
+import model.ImageModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +26,6 @@ public class PicturePanel extends JPanel implements Observer {
     private void layoutComponent(){
         setLayout(new GridLayout(0,3,10,10));
         //setPreferredSize(new Dimension(630,520));
-
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
 
@@ -55,7 +56,12 @@ public class PicturePanel extends JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        icm.listpic.forEach(this::add);
+        this.removeAll();
+        for(ImageModel im:icm.listModel){
+            if(im.getRate()>=icm.getRateFilter()){
+                this.add(im.getPic());
+            }
+        }
         validate();
     }
 }

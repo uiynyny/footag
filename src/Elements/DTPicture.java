@@ -29,6 +29,7 @@ public class DTPicture extends JPanel implements Observer {
         horBox.add(vertBox);
         horBox.add(filter);
         add(horBox,BorderLayout.SOUTH);
+        horBox.setPreferredSize(new Dimension((int)horBox.getPreferredSize().getWidth(),80));
         controller();
         im.setPic(this);
         im.addObserver(this);
