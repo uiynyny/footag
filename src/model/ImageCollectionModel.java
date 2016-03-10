@@ -1,6 +1,7 @@
 package model;
 
 import Elements.DTPicture;
+import Elements.Mode;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -9,6 +10,7 @@ public class ImageCollectionModel extends Observable {
     public ArrayList<ImageModel> listModel;
     public ArrayList<DTPicture> listpic;
     private int rateFilter;
+    private Mode m;
 
     public int getRateFilter() {
         return rateFilter;
@@ -20,9 +22,20 @@ public class ImageCollectionModel extends Observable {
         notifyObservers();
     }
 
+    public void setMode(Mode m){
+        this.m=m;
+        setChanged();
+        notifyObservers();
+    }
+
+    public Mode getMode(){
+        return m;
+    }
+
     public ImageCollectionModel(){
         listModel=new ArrayList<>();
         listpic=new ArrayList<>();
+        m=Mode.Grid;
     }
 
     public void addModel(ImageModel im){

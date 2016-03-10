@@ -158,5 +158,12 @@ public class ToolView extends JPanel implements Observer {
                 ie.printStackTrace();
             }
         });
+
+        grid.addActionListener(e->{
+            icm.setMode(Mode.Grid);
+        });
+        list.addActionListener(e->{
+            icm.setMode(Mode.List);
+        });
     }
 }
