@@ -30,6 +30,7 @@ public class FooTag {
         frame.add(jScrollPane,BorderLayout.CENTER);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setMinimumSize(new Dimension(630,520));
         frame.pack();
         frame.setVisible(true);
     }

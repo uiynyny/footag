@@ -81,7 +81,7 @@ public class ToolView extends JPanel implements Observer {
             addMouseMotionListener(new MouseMotionAdapter() {
                 @Override
                 public void mouseMoved(MouseEvent e) {
-                    System.err.println("moved");
+                    //System.err.println("moved");
                     if(e.getX()>=7 && e.getX()<=21){
                         preRate = 1;
                     }else if(e.getX()>21 && e.getX()<=35){
@@ -147,10 +147,9 @@ public class ToolView extends JPanel implements Observer {
                         FileTime time = Files.readAttributes(Paths.get(path), BasicFileAttributes.class).creationTime();
                         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                         String date = sdf.format(time.toMillis());
-
-                        System.err.println(name);
-                        System.err.println(date);
-                        System.err.println(path);
+//                        System.err.println(name);
+//                        System.err.println(date);
+//                        System.err.println(path);
                         ImageModel im = new ImageModel(name, path, date);
                         icm.addModel(im);
                     }
