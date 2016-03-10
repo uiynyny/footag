@@ -22,7 +22,7 @@ public class PicturePanel extends JPanel implements Observer {
     }
 
     private void layoutComponent(){
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(0,3,10,10));
         //setPreferredSize(new Dimension(630,520));
 
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
@@ -33,14 +33,14 @@ public class PicturePanel extends JPanel implements Observer {
             @Override
             public void componentResized(ComponentEvent e) {
                 System.err.println(getWidth()+" "+getHeight());
-                if(getWidth()<=760){
-                    setLayout(new GridLayout(0,2));
-                }else if(getWidth()>760 && getWidth()<=1000){
-                    setLayout(new GridLayout(0,3));
-                }else if(getWidth()>1000 && getWidth()<=1240){
-                    setLayout(new GridLayout(0,4));
+                if(getWidth()<=780){
+                    setLayout(new GridLayout(0,2,10,10));
+                }else if(getWidth()>780 && getWidth()<=1030){
+                    setLayout(new GridLayout(0,3,10,10));
+                }else if(getWidth()>1030 && getWidth()<=1280){
+                    setLayout(new GridLayout(0,4,10,10));
                 }else{
-                    setLayout(new GridLayout(0,5));
+                    setLayout(new GridLayout(0,5,10,10));
                 }
                 validate();
             }
