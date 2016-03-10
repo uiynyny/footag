@@ -11,21 +11,23 @@ import java.awt.event.MouseEvent;
 import java.util.Observable;
 import java.util.Observer;
 
-public class DTPicture extends JComponent implements Observer {
+public class DTPicture extends JPanel implements Observer {
     private ImageModel im;
     private Image image;
-    private JLabel name;
-    private JLabel date;
+    private JComponent imagePane;
 
     public DTPicture(ImageModel im){
         this.im = im;
         image = new ImageIcon(im.getPath()).getImage().getScaledInstance(240,160,Image.SCALE_SMOOTH);
-        name = new JLabel(im.getName());
-        date = new JLabel(im.getDate());
         setFocusable(true);
-        setPreferredSize(new Dimension(240,160));
-        add(name);
-        add(date);
+        setPreferredSize(new Dimension(240,200));
+        imagePane=new imagePane();
+        setLayout(new BorderLayout());
+        add(imagePane,BorderLayout.CENTER);
+        Box vertBox=Box.createVerticalBox();
+        vertBox.add(new JLabel(im.getName()));
+        vertBox.add(new JLabel(im.getDate()));
+        add(vertBox,BorderLayout.SOUTH);
         controller();
         im.setPic(this);
         im.addObserver(this);
@@ -53,9 +55,7 @@ public class DTPicture extends JComponent implements Observer {
 
     protected void paintComponent(Graphics g){
         g.setColor(Color.WHITE);
-        g.fillRect(0, 0, image.getWidth(this),image.getHeight(this));
-        g.drawImage(image,0,0,this);
-
+        g.fillRect(0, 0, getWidth(),getHeight());
         if(isFocusOwner()){
             g.setColor(Color.RED);
         }else{
@@ -67,5 +67,17 @@ public class DTPicture extends JComponent implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         repaint();
+    }
+
+    private class imagePane extends JComponent{
+        public imagePane(){
+            setBackground(Color.white);
+            setPreferredSize(new Dimension(240,160));
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            g.drawImage(image,0,0,this);
+        }
     }
 }

@@ -1,14 +1,12 @@
 package view;
 
-import Elements.DTPicture;
+
 import model.ImageCollectionModel;
-import model.ImageModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.awt.event.ContainerAdapter;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +23,6 @@ public class PicturePanel extends JPanel implements Observer {
 
     private void layoutComponent(){
         setLayout(new GridLayout(0,3));
-        setBackground(Color.GRAY);
         //setPreferredSize(new Dimension(630,520));
 
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
@@ -52,7 +49,7 @@ public class PicturePanel extends JPanel implements Observer {
 
     public void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
-        g2d.setColor(Color.WHITE);
+        g2d.setColor(Color.GRAY);
         g2d.fillRect(0,0,getWidth(),getHeight());
     }
 
