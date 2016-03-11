@@ -24,6 +24,9 @@ public class ImageCollectionModel extends Observable {
 
     public void setMode(Mode m){
         this.m=m;
+        for(ImageModel im: listModel){
+            im.setMode(m);
+        }
         setChanged();
         notifyObservers();
     }

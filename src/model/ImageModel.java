@@ -1,6 +1,7 @@
 package model;
 
 import Elements.DTPicture;
+import Elements.Mode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,17 @@ public class ImageModel extends Observable implements Serializable{
     private int rate;
     private String path;
     private String date;
+    private Mode mode=Mode.Grid;
+
+    public void setMode(Mode m){
+        mode=m;
+        setChanged();
+        notifyObservers();
+    }
+
+    public Mode getMode() {
+        return mode;
+    }
 
     public int getRate(){
         return rate;

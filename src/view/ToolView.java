@@ -22,6 +22,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class ToolView extends JPanel implements Observer {
+
     Image upload = new ImageIcon("icon/upload.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
     Image g = new ImageIcon("icon/grid.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
     Image l = new ImageIcon("icon/list.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH);
@@ -30,9 +31,8 @@ public class ToolView extends JPanel implements Observer {
     private JButton list = new JButton(new ImageIcon(l));
     private JButton clear = new JButton("Clear");
     private ImageCollectionModel icm;
-    private ArrayList<Shape> stars=new ArrayList<>();
     private JLabel label = new JLabel("Filter by:");
-    private int preRate = 0;
+    private starPane filter = new starPane();
 
     public ToolView(ImageCollectionModel icm){
         super();
@@ -42,8 +42,6 @@ public class ToolView extends JPanel implements Observer {
         icm.addObserver(this);
         icm.updateView();
     }
-
-    private FilterPane filter = new FilterPane();
 
     private void layoutView(){
         setLayout(new BoxLayout(this,BoxLayout.LINE_AXIS));
@@ -65,69 +63,32 @@ public class ToolView extends JPanel implements Observer {
         repaint();
     }
 
-    private class FilterPane extends JPanel{
 
-        public FilterPane(){
-            for(int i=1;i<=5;i++){
-                stars.add(new Star(14*i,0));
-            }
-            registerController();
-            setBackground(Color.red);
-            setPreferredSize(new Dimension(80,15));
-            setMaximumSize(new Dimension(80,15));
-        }
-
-        private void registerController(){
-            addMouseMotionListener(new MouseMotionAdapter() {
-                @Override
-                public void mouseMoved(MouseEvent e) {
-                    //System.err.println("moved");
-                    if(e.getX()>=7 && e.getX()<=21){
-                        preRate = 1;
-                    }else if(e.getX()>21 && e.getX()<=35){
-                        preRate = 2;
-                    }else if(e.getX()>35 && e.getX()<=49){
-                        preRate = 3;
-                    }else if(e.getX()>49 && e.getX()<=63){
-                        preRate = 4;
-                    }else if(e.getX()>63 && e.getX()<=77){
-                        preRate = 5;
-                    }
-                    icm.updateView();
-                }
-            });
-            addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    icm.setRateFilter(preRate);
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    preRate= icm.getRateFilter();
-                    icm.updateView();
-                }
-            });
-        }
-        @Override
-        public void paintComponent(Graphics g) {
-            Graphics2D g2d = (Graphics2D)g;
-//            g2d.setColor(Color.WHITE);
-//            g2d.fillRect(0,0,getWidth(),getHeight());
-            g2d.setColor(Color.BLACK);
-            for(int i=0;i<5;i++){
-                g2d.draw(stars.get(i));
-            }
-            for(int i=0;i<preRate;i++){
-                g2d.setColor(Color.BLACK);
-                g2d.fill(stars.get(i));
-            }
-        }
-    }
 
     private void controller(){
+        filter.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                filter.rate(e.getX());
+                icm.updateView();
+            }
+        });
+
+        filter.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                icm.setRateFilter(filter.preRate);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                filter.preRate= icm.getRateFilter();
+                icm.updateView();
+            }
+        });
+
         clear.addActionListener(e->{
-            preRate=0;
+            filter.preRate=0;
             icm.setRateFilter(0);
         });
         open.addActionListener(e->{

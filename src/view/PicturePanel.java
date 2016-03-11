@@ -14,31 +14,25 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class PicturePanel extends JPanel implements Observer {
-    //private ArrayList<DTPicture> pic = new ArrayList<>();
     private ImageCollectionModel icm;
     public PicturePanel(ImageCollectionModel icm){
         this.icm=icm;
         layoutComponent();
-        icm.addObserver(this);
         controller();
+        icm.addObserver(this);
         icm.updateView();
     }
 
     private void layoutComponent(){
-        if(icm.getMode()== Mode.Grid) {
-            setLayout(new GridLayout(0, 3, 10, 10));
-        }else{
-            setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
-        }
-        //setPreferredSize(new Dimension(630,520));
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        validate();
     }
 
     private void controller(){
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-                System.err.println(getWidth() + " " + getHeight());
+                //System.err.println(getWidth() + " " + getHeight());
                 icm.updateView();
             }
         });
@@ -66,7 +60,7 @@ public class PicturePanel extends JPanel implements Observer {
             setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
         }
 
-        this.removeAll();
+        removeAll();
         for(ImageModel im:icm.listModel){
             if(im.getRate()>=icm.getRateFilter()){
                 this.add(im.getPic());
