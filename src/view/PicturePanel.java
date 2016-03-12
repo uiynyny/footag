@@ -61,9 +61,9 @@ public class PicturePanel extends JPanel implements Observer {
         }
 
         removeAll();
-        for(ImageModel im:icm.listModel){
-            if(im.getRate()>=icm.getRateFilter()){
-                this.add(im.getPic());
+        for(int i=0;i<icm.listModel.size();i++){
+            if(icm.listModel.get(i).getRate()>=icm.getRateFilter()){
+                this.add(icm.listpic.get(i));
             }
         }
         validate();

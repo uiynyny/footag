@@ -21,7 +21,6 @@ public class DTPicture extends JPanel implements Observer {
         setPreferredSize(new Dimension(240,200));
         imagePane=new imagePane();
         controller();
-        im.setPic(this);
         im.addObserver(this);
         im.updateView();
     }

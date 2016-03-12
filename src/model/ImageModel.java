@@ -2,16 +2,11 @@ package model;
 
 import Elements.DTPicture;
 import Elements.Mode;
-
-import javax.swing.*;
-import java.awt.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Observable;
 
 
 public class ImageModel extends Observable implements Serializable{
-    private DTPicture pic;
     private String name;
     private int rate;
     private String path;
@@ -31,18 +26,11 @@ public class ImageModel extends Observable implements Serializable{
     public int getRate(){
         return rate;
     }
+
     public void setRate(int r){
         rate=r;
         setChanged();
         notifyObservers();
-    }
-
-    public void setPic(DTPicture pic){
-        this.pic=pic;
-    }
-
-    public DTPicture getPic() {
-        return pic;
     }
 
     public String getName() {
@@ -62,7 +50,6 @@ public class ImageModel extends Observable implements Serializable{
         this.path = filepath;
         this.date = date;
         this.rate = 0;
-        pic=new DTPicture(this);
     }
 
     public void updateView(){

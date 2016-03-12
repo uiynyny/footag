@@ -113,6 +113,8 @@ public class ToolView extends JPanel implements Observer {
 //                        System.err.println(path);
                         ImageModel im = new ImageModel(name, path, date);
                         icm.addModel(im);
+                        setSize(getWidth()+1,getHeight());
+                        setSize(getWidth()-1,getHeight());
                     }
                 }
             }catch(IOException ie){
