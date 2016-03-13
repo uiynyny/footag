@@ -12,13 +12,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.security.DigestInputStream;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Observable;
@@ -107,30 +104,15 @@ public class ToolView extends JPanel implements Observer {
                     for (File aFile : file) {
                         String name = aFile.getName();
                         String path = aFile.getAbsolutePath();
-                        //BasicFileAttributes atr = Files.readAttributes(Paths.get(path), BasicFileAttributes.class);
                         FileTime time = Files.readAttributes(Paths.get(path), BasicFileAttributes.class).creationTime();
                         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                         String date = sdf.format(time.toMillis());
-//                        System.err.println(name);
-//                        System.err.println(date);
-//                        System.err.println(path);
-                        MessageDigest md = MessageDigest.getInstance("MD5");
-                        try (InputStream is = Files.newInputStream(Paths.get(path));
-                             DigestInputStream dis = new DigestInputStream(is, md))
-                        {
-                        }
-                        byte[] digest = md.digest();
-                        System.err.println(digest);
                         ImageModel im = new ImageModel(name, path, date);
                         icm.addModel(im);
-                        setSize(getWidth()+1,getHeight());
-                        setSize(getWidth()-1,getHeight());
                     }
                 }
             }catch(IOException ie){
                 ie.printStackTrace();
-            } catch (NoSuchAlgorithmException e1) {
-                e1.printStackTrace();
             }
         });
 

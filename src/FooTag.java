@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.*;
+import java.util.ArrayList;
 
 public class FooTag {
 
@@ -26,7 +28,45 @@ public class FooTag {
         jScrollPane.getVerticalScrollBar().addAdjustmentListener(e->{
             frame.repaint();
         });
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if(icm.listModel.size()!=0){
+                    File file= new File("saved.list");
+                    try {
+                        FileOutputStream out = new FileOutputStream(file);
+                        ObjectOutputStream oos = new ObjectOutputStream(out);
+                        oos.writeObject(icm.listModel);
+                        oos.close();
+                        out.close();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
 
+            @Override
+            public void windowOpened(WindowEvent e) {
+                if(new File("saved.list").exists()){
+                    System.err.println("file exist");
+                    try{
+                        FileInputStream in = new FileInputStream(new File("saved.list"));
+                        ObjectInputStream ois = new ObjectInputStream(in);
+                        //ImageCollectionModel icm =new ImageCollectionModel();
+                        icm.listModel= (ArrayList<ImageModel>) ois.readObject();
+                        in.close();
+                        ois.close();
+                        icm.loadupdate();
+                    }catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ClassNotFoundException e1) {
+                        e1.printStackTrace();
+                    }
+                }else{
+                    System.err.println("file not exist");
+                }
+            }
+        });
         frame.setLayout(new BorderLayout());
         frame.add(toolView,BorderLayout.NORTH);
         frame.add(jScrollPane,BorderLayout.CENTER);

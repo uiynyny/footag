@@ -13,9 +13,12 @@ public class DTPicture extends JPanel implements Observer {
     private ImageModel im;
     private Image image;
     private JComponent imagePane;
-    //JLabel picLabel;
     private Dimension bound=new Dimension(240,160);
     private starPane filter = new starPane();
+
+    public void setpreRate(int r){
+        filter.preRate=r;
+    }
 
     public DTPicture(ImageModel im){
         this.im = im;

@@ -7,6 +7,7 @@ import java.util.Observable;
 
 
 public class ImageModel extends Observable implements Serializable{
+    private transient DTPicture pic;
     private String name;
     private int rate;
     private String path;
@@ -33,6 +34,14 @@ public class ImageModel extends Observable implements Serializable{
         notifyObservers();
     }
 
+    public DTPicture getPic() {
+        return pic;
+    }
+
+    public void setPic(){
+        pic=new DTPicture(this);
+    }
+
     public String getName() {
         return name;
     }
@@ -50,6 +59,7 @@ public class ImageModel extends Observable implements Serializable{
         this.path = filepath;
         this.date = date;
         this.rate = 0;
+        pic=new DTPicture(this);
     }
 
     public void updateView(){

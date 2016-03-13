@@ -8,7 +8,7 @@ import java.util.Observable;
 
 public class ImageCollectionModel extends Observable {
     public ArrayList<ImageModel> listModel;
-    public ArrayList<DTPicture> listpic;
+    //public ArrayList<DTPicture> listpic;
     private int rateFilter;
     private Mode m;
 
@@ -37,13 +37,12 @@ public class ImageCollectionModel extends Observable {
 
     public ImageCollectionModel(){
         listModel=new ArrayList<>();
-        listpic=new ArrayList<>();
         m=Mode.Grid;
     }
 
     public void addModel(ImageModel im){
         listModel.add(im);
-        listpic.add(new DTPicture(im));
+        //listpic.add(new DTPicture(im));
         im.updateView();
         setChanged();
         notifyObservers();
@@ -56,6 +55,15 @@ public class ImageCollectionModel extends Observable {
     }
 
     public void updateView(){
+        setChanged();
+        notifyObservers();
+    }
+
+    public void loadupdate(){
+        for(ImageModel im: listModel){
+            im.setPic();
+            im.getPic().setpreRate(im.getRate());
+        }
         setChanged();
         notifyObservers();
     }
