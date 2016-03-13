@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c575be3-0f84-48c8-9017-7f6b80471e3f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/model/ImageCollectionModel.class" afterPath="$PROJECT_DIR$/out/production/footag/model/ImageCollectionModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/model/ImageModel.class" afterPath="$PROJECT_DIR$/out/production/footag/model/ImageModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/view/ToolView.class" afterPath="$PROJECT_DIR$/out/production/footag/view/ToolView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elements/DTPicture.java" afterPath="$PROJECT_DIR$/src/Elements/DTPicture.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FooTag.java" afterPath="$PROJECT_DIR$/src/FooTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" afterPath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageModel.java" afterPath="$PROJECT_DIR$/src/model/ImageModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/PicturePanel.java" afterPath="$PROJECT_DIR$/src/view/PicturePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ToolView.java" afterPath="$PROJECT_DIR$/src/view/ToolView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/starPane.java" afterPath="$PROJECT_DIR$/src/view/starPane.java" />
     </list>
     <ignored path="footag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/view/PicturePanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+              <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
               <folding>
                 <element signature="e#855#856#0" expanded="true" />
                 <element signature="e#903#904#0" expanded="true" />
@@ -48,13 +39,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DTPicture.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DTPicture.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75395685">
-              <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#460#461#0" expanded="true" />
                 <element signature="e#492#493#0" expanded="true" />
                 <element signature="e#1202#1203#0" expanded="true" />
@@ -108,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FooTag.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FooTag.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FooTag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.43238994">
+              <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -140,13 +130,13 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/Elements/Mode.java" />
-        <option value="$PROJECT_DIR$/src/FooTag.java" />
         <option value="$PROJECT_DIR$/src/view/starPane.java" />
         <option value="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
         <option value="$PROJECT_DIR$/src/view/ToolView.java" />
-        <option value="$PROJECT_DIR$/src/view/PicturePanel.java" />
         <option value="$PROJECT_DIR$/src/model/ImageModel.java" />
         <option value="$PROJECT_DIR$/src/Elements/DTPicture.java" />
+        <option value="$PROJECT_DIR$/src/view/PicturePanel.java" />
+        <option value="$PROJECT_DIR$/src/FooTag.java" />
       </list>
     </option>
   </component>
@@ -156,10 +146,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="567" />
+    <option name="y" value="73" />
+    <option name="width" value="1030" />
+    <option name="height" value="961" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -777,7 +767,7 @@
       <workItem from="1457650453802" duration="4140000" />
       <workItem from="1457661166687" duration="157000" />
       <workItem from="1457804937295" duration="2865000" />
-      <workItem from="1457898553857" duration="10568000" />
+      <workItem from="1457898553857" duration="11394000" />
     </task>
     <task id="LOCAL-00001" summary="picture Panel almost done">
       <created>1457602946298</created>
@@ -815,14 +805,20 @@
       <option name="project" value="LOCAL" />
       <updated>1457906576672</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="resolve resize">
+      <created>1457911160342</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1457911160342</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25924000" />
+    <option name="totallyTimeSpent" value="26750000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="567" y="73" width="1030" height="961" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -832,12 +828,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23572938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21974148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28796843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24161735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28541225" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -890,7 +886,8 @@
     <MESSAGE value="picture Panel almost done" />
     <MESSAGE value="done draft" />
     <MESSAGE value="reload image when open" />
-    <option name="LAST_COMMIT_MESSAGE" value="reload image when open" />
+    <MESSAGE value="resolve resize" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve resize" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -927,7 +924,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#1202#1203#0" expanded="true" />
@@ -998,7 +994,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#1202#1203#0" expanded="true" />
@@ -1069,7 +1064,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#1202#1203#0" expanded="true" />
@@ -1140,7 +1134,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#1202#1203#0" expanded="true" />
@@ -1211,7 +1204,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#1202#1203#0" expanded="true" />
@@ -1317,17 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/PicturePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ImageCollectionModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1339,11 +1320,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FooTag.java">
+    <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ImageModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/PicturePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+          <folding>
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1361,30 +1371,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ImageModel.java">
+    <entry file="file://$PROJECT_DIR$/src/FooTag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.43238994">
+          <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75395685">
-          <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1690#1691#0" expanded="true" />
-            <element signature="e#3836#3837#0" expanded="true" />
-            <element signature="e#3900#3901#0" expanded="true" />
-            <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

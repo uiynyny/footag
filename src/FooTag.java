@@ -47,20 +47,24 @@ public class FooTag {
             public void windowOpened(WindowEvent e) {
                 if(new File("saved.list").exists()){
                     System.err.println("file exist");
-                    try{
-                        FileInputStream in = new FileInputStream(new File("saved.list"));
-                        ObjectInputStream ois = new ObjectInputStream(in);
-                        //ImageCollectionModel icm =new ImageCollectionModel();
-                        icm.listModel= (ArrayList<ImageModel>) ois.readObject();
-                        in.close();
-                        ois.close();
-                        icm.loadUpdate();
-                    }catch (IOException | ClassNotFoundException e1) {
-                        e1.printStackTrace();
+                    int res= JOptionPane.showConfirmDialog(null,"found previously saved picture.\n " +
+                            "Do you want to open it?","confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+                    if(res==JOptionPane.YES_OPTION) {
+                        try {
+                            FileInputStream in = new FileInputStream(new File("saved.list"));
+                            ObjectInputStream ois = new ObjectInputStream(in);
+                            icm.listModel = (ArrayList<ImageModel>) ois.readObject();
+                            in.close();
+                            ois.close();
+                            icm.loadUpdate();
+                        } catch (IOException | ClassNotFoundException e1) {
+                            e1.printStackTrace();
+                        }
                     }
                 }else{
                     System.err.println("file not exist");
                 }
+
             }
         });
         frame.setLayout(new BorderLayout());
