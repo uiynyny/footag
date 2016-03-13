@@ -106,8 +106,7 @@ public class ToolView extends JPanel implements Observer {
                         FileTime time = Files.readAttributes(Paths.get(path), BasicFileAttributes.class).creationTime();
                         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                         String date = sdf.format(time.toMillis());
-                        ImageModel im = new ImageModel(name, path, date);
-                        icm.addModel(im);
+                        icm.addModel(new ImageModel(name, path, date));
                     }
                 }
             }catch(IOException ie){

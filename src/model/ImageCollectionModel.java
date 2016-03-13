@@ -39,6 +39,7 @@ public class ImageCollectionModel extends Observable {
 
     public void addModel(ImageModel im){
         listModel.add(im);
+        im.setIcm(this);
         im.updateView();
         setChanged();
         notifyObservers();
@@ -60,6 +61,7 @@ public class ImageCollectionModel extends Observable {
             im.setPic();
             im.getPic().setPreRate(im.getRate());
             im.setMode(m);
+            im.setIcm(this);
         }
         setChanged();
         notifyObservers();

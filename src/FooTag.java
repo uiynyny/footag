@@ -58,6 +58,7 @@ public class FooTag {
                             ois.close();
                             icm.loadUpdate();
                         } catch (IOException | ClassNotFoundException e1) {
+                            System.err.println("can't read file");
                             e1.printStackTrace();
                         }
                     }
@@ -70,7 +71,6 @@ public class FooTag {
         frame.setLayout(new BorderLayout());
         frame.add(toolView,BorderLayout.NORTH);
         frame.add(jScrollPane,BorderLayout.CENTER);
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setMinimumSize(new Dimension(630,520));
         frame.pack();

@@ -8,6 +8,7 @@ import java.util.Observable;
 
 public class ImageModel extends Observable implements Serializable{
     private transient DTPicture pic;
+    private transient ImageCollectionModel icm;
     private String name;
     private int rate;
     private String path;
@@ -20,6 +21,11 @@ public class ImageModel extends Observable implements Serializable{
         notifyObservers();
     }
 
+    public void setIcm(ImageCollectionModel icm){
+        this.icm=icm;
+    }
+
+
     public Mode getMode() {
         return mode;
     }
@@ -30,8 +36,7 @@ public class ImageModel extends Observable implements Serializable{
 
     public void setRate(int r){
         rate=r;
-        setChanged();
-        notifyObservers();
+        updateView();
     }
 
     public DTPicture getPic() {
@@ -65,5 +70,8 @@ public class ImageModel extends Observable implements Serializable{
     public void updateView(){
         setChanged();
         notifyObservers();
+    }
+    public void supUpdate(){
+        icm.updateView();
     }
 }

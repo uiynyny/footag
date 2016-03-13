@@ -2,7 +2,6 @@ package Elements;
 
 import model.ImageModel;
 import view.starPane;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -56,7 +55,7 @@ public class DTPicture extends JPanel implements Observer {
             @Override
             public void mouseExited(MouseEvent e) {
                 filter.preRate= im.getRate();
-                im.updateView();
+                im.supUpdate();
             }
         });
         imagePane.addMouseListener(new MouseAdapter() {
@@ -79,22 +78,19 @@ public class DTPicture extends JPanel implements Observer {
         clear.addActionListener(e->{
             im.setRate(0);
             filter.preRate=0;
-            im.updateView();
+            im.supUpdate();
         });
     }
 
     protected void paintComponent(Graphics g){
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, getWidth(),getHeight());
-        //field for close
-        g.setColor(Color.black);
-        g.drawLine(getWidth()-10,0,getWidth(),10);
-        g.drawLine(getWidth(),0,getWidth()-10,10);
     }
 
     @Override
     public void update(Observable o, Object arg) {
         removeAll();
+        revalidate();
         setLayout(new BorderLayout());
         add(imagePane,BorderLayout.CENTER);
         Box vertBox=Box.createVerticalBox();
@@ -109,8 +105,7 @@ public class DTPicture extends JPanel implements Observer {
         }else if(im.getMode()==Mode.List){
             add(horBox,BorderLayout.EAST);
         }
-        revalidate();
-        repaint();
+        validate();
     }
 
     private class imagePane extends JComponent{
