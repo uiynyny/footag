@@ -16,7 +16,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Observable;
 import java.util.Observer;
@@ -116,11 +115,7 @@ public class ToolView extends JPanel implements Observer {
             }
         });
 
-        grid.addActionListener(e->{
-            icm.setMode(Mode.Grid);
-        });
-        list.addActionListener(e->{
-            icm.setMode(Mode.List);
-        });
+        grid.addActionListener(e-> icm.setMode(Mode.Grid));
+        list.addActionListener(e-> icm.setMode(Mode.List));
     }
 }

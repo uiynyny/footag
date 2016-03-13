@@ -1,11 +1,9 @@
 package view;
 
 
-import Elements.DTPicture;
 import Elements.Mode;
 import model.ImageCollectionModel;
 import model.ImageModel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
@@ -32,7 +30,6 @@ public class PicturePanel extends JPanel implements Observer {
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
-                //System.err.println(getWidth() + " " + getHeight());
                 icm.updateView();
             }
         });
@@ -61,9 +58,14 @@ public class PicturePanel extends JPanel implements Observer {
         }
 
         removeAll();
+        repaint();
+        revalidate();
         for(ImageModel im:icm.listModel){
             if(im.getRate()>=icm.getRateFilter()){
                 add(im.getPic());
+                if(icm.getMode()==Mode.List){
+                    add(Box.createVerticalStrut(10));
+                }
             }
         }
         validate();

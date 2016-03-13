@@ -21,10 +21,7 @@ public int preRate=0;
     }
 
     public void rate(int x){
-        if(x<7) {
-            preRate = 0;
-        }
-        else if(x>=7 && x<=21){
+        if(x>=7 && x<=21){
             preRate = 1;
         }else if(x>21 && x<=35){
             preRate = 2;

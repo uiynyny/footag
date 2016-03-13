@@ -12,7 +12,7 @@ public class ImageModel extends Observable implements Serializable{
     private int rate;
     private String path;
     private String date;
-    private Mode mode=Mode.Grid;
+    private transient Mode mode=Mode.Grid;
 
     public void setMode(Mode m){
         mode=m;
@@ -59,7 +59,7 @@ public class ImageModel extends Observable implements Serializable{
         this.path = filepath;
         this.date = date;
         this.rate = 0;
-        pic=new DTPicture(this);
+        setPic();
     }
 
     public void updateView(){

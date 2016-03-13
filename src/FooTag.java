@@ -25,9 +25,7 @@ public class FooTag {
         JScrollPane jScrollPane = new JScrollPane(picturePanel);
         jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        jScrollPane.getVerticalScrollBar().addAdjustmentListener(e->{
-            frame.repaint();
-        });
+        jScrollPane.getVerticalScrollBar().addAdjustmentListener(e-> frame.repaint());
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -56,10 +54,8 @@ public class FooTag {
                         icm.listModel= (ArrayList<ImageModel>) ois.readObject();
                         in.close();
                         ois.close();
-                        icm.loadupdate();
-                    }catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ClassNotFoundException e1) {
+                        icm.loadUpdate();
+                    }catch (IOException | ClassNotFoundException e1) {
                         e1.printStackTrace();
                     }
                 }else{

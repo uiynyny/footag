@@ -12,20 +12,21 @@ import java.util.Observer;
 public class DTPicture extends JPanel implements Observer {
     private ImageModel im;
     private Image image;
+    private JButton clear=new JButton("X");
     private JComponent imagePane;
-    private Dimension bound=new Dimension(240,160);
     private starPane filter = new starPane();
 
-    public void setpreRate(int r){
+    public void setPreRate(int r){
         filter.preRate=r;
     }
 
     public DTPicture(ImageModel im){
         this.im = im;
         image = new ImageIcon(im.getPath()).getImage();
-        Dimension rescale = getScaledDimension(new Dimension(image.getWidth(this),image.getHeight(this)),bound);
+        Dimension bound = new Dimension(240, 160);
+        Dimension rescale = getScaledDimension(new Dimension(image.getWidth(this),image.getHeight(this)), bound);
         image=image.getScaledInstance((int)rescale.getWidth(),(int)rescale.getHeight(),Image.SCALE_SMOOTH);
-        setPreferredSize(new Dimension(240,160));
+        setPreferredSize(new Dimension(240,180));
         imagePane=new imagePane();
         controller();
         im.addObserver(this);
@@ -75,11 +76,20 @@ public class DTPicture extends JPanel implements Observer {
                 im.updateView();
             }
         });
+        clear.addActionListener(e->{
+            im.setRate(0);
+            filter.preRate=0;
+            im.updateView();
+        });
     }
 
     protected void paintComponent(Graphics g){
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, getWidth(),getHeight());
+        //field for close
+        g.setColor(Color.black);
+        g.drawLine(getWidth()-10,0,getWidth(),10);
+        g.drawLine(getWidth(),0,getWidth()-10,10);
     }
 
     @Override
@@ -93,25 +103,25 @@ public class DTPicture extends JPanel implements Observer {
         vertBox.add(new JLabel(" "+im.getDate()));
         horBox.add(vertBox);
         horBox.add(filter);
+        horBox.add(clear);
         if(im.getMode()==Mode.Grid){
             add(horBox,BorderLayout.SOUTH);
         }else if(im.getMode()==Mode.List){
             add(horBox,BorderLayout.EAST);
         }
-        validate();
+        revalidate();
         repaint();
     }
 
     private class imagePane extends JComponent{
         public imagePane(){
-            setBackground(Color.white);
             setPreferredSize(new Dimension(240,160));
         }
 
         @Override
         protected void paintComponent(Graphics g) {
             g.drawImage(image,5,5,this);
-            validate();
+            revalidate();
         }
     }
 
