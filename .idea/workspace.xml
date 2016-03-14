@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c575be3-0f84-48c8-9017-7f6b80471e3f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/model/ImageCollectionModel.class" afterPath="$PROJECT_DIR$/out/production/footag/model/ImageCollectionModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/model/ImageModel.class" afterPath="$PROJECT_DIR$/out/production/footag/model/ImageModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/footag/view/ToolView.class" afterPath="$PROJECT_DIR$/out/production/footag/view/ToolView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elements/DTPicture.java" afterPath="$PROJECT_DIR$/src/Elements/DTPicture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FooTag.java" afterPath="$PROJECT_DIR$/src/FooTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" afterPath="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ImageModel.java" afterPath="$PROJECT_DIR$/src/model/ImageModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ToolView.java" afterPath="$PROJECT_DIR$/src/view/ToolView.java" />
     </list>
     <ignored path="footag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,32 +42,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DTPicture.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DTPicture.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5143639">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#459#460#0" expanded="true" />
                 <element signature="e#491#492#0" expanded="true" />
                 <element signature="e#1201#1202#0" expanded="true" />
                 <element signature="e#1255#1256#0" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1689#1690#0" expanded="true" />
-                <element signature="e#3673#3674#0" expanded="true" />
-                <element signature="e#3737#3738#0" expanded="true" />
+                <element signature="e#3705#3706#0" expanded="true" />
+                <element signature="e#3769#3770#0" expanded="true" />
                 <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageCollectionModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImageCollectionModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/ImageCollectionModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7373461">
-              <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/view/ToolView.java" />
         <option value="$PROJECT_DIR$/src/FooTag.java" />
         <option value="$PROJECT_DIR$/src/model/ImageModel.java" />
-        <option value="$PROJECT_DIR$/src/Elements/DTPicture.java" />
         <option value="$PROJECT_DIR$/src/model/ImageCollectionModel.java" />
+        <option value="$PROJECT_DIR$/src/Elements/DTPicture.java" />
       </list>
     </option>
   </component>
@@ -774,7 +771,7 @@
       <workItem from="1457650453802" duration="4140000" />
       <workItem from="1457661166687" duration="157000" />
       <workItem from="1457804937295" duration="2865000" />
-      <workItem from="1457898553857" duration="12833000" />
+      <workItem from="1457898553857" duration="13607000" />
     </task>
     <task id="LOCAL-00001" summary="picture Panel almost done">
       <created>1457602946298</created>
@@ -824,11 +821,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457911950485</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="finish">
+      <created>1457913386691</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1457913386691</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28189000" />
+    <option name="totallyTimeSpent" value="28963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -901,7 +904,8 @@
     <MESSAGE value="reload image when open" />
     <MESSAGE value="resolve resize" />
     <MESSAGE value="optimize open option" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize open option" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -943,10 +947,8 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
             <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
@@ -1016,10 +1018,8 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
             <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
@@ -1089,10 +1089,8 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
             <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
@@ -1162,10 +1160,8 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
             <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
@@ -1235,10 +1231,8 @@
             <element signature="e#491#492#0" expanded="true" />
             <element signature="e#1201#1202#0" expanded="true" />
             <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
             <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
@@ -1372,25 +1366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3737#3738#0" expanded="true" />
-            <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ImageModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1404,10 +1379,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ImageCollectionModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7373461">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elements/DTPicture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5143639">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1255#1256#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
+            <element signature="method#getScaledDimension#0;class#DTPicture#0" expanded="false" />
           </folding>
         </state>
       </provider>

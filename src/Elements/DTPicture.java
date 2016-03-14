@@ -50,6 +50,7 @@ public class DTPicture extends JPanel implements Observer {
             @Override
             public void mouseClicked(MouseEvent e) {
                 im.setRate(filter.preRate);
+                im.supUpdate();
             }
 
             @Override
